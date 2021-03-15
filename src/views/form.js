@@ -7,6 +7,7 @@ export default class Form extends Component {
 
     this.state = {
       categoryView : [],
+      subcategories: [],
     }
 
     this.handleChange = this.handleChange.bind(this);
@@ -35,23 +36,29 @@ export default class Form extends Component {
     e.preventDefault();
     let selectBox = document.getElementById("selectme");
     let selectedIndex = selectBox.options[selectBox.selectedIndex].value;
-    console.log(selectedIndex);
+    // console.log(selectedIndex);
     let tmpView = this.props.categories;
+
 
     //filter view based on categoryView
     tmpView = tmpView.filter((item)=>{
        return item.name == selectedIndex
     });
 
+    // console.log(tmpView["subcategories"])
+
     this.setState({
-      categoryView: tmpView
-    })
+      categoryView: tmpView,
+      subcategories: tmpView.subcategories || []
+    });
+
+      console.log(this.state.subcategories);
 
 
 
   }
   render() {
-    const { categoryView } = this.state;
+    const { categoryView, subcategories } = this.state;
     const categories = this.props.categories;
     console.log(categories.data)
     return (
@@ -85,6 +92,17 @@ export default class Form extends Component {
         {
           (categoryView && categoryView.length > 0) && categoryView.map((data) => {
             return (<li key={'hellfrom-'+data.id} id={'hell-'+ data.id}> {data.name}</li>);
+          })
+        }
+        </ul>
+
+
+        <br/>
+        <h6>Sub Categories</h6>
+        <ul>
+        {
+          (subcategories && subcategories.length > 0) && subcategories.map((data) => {
+            return (<li key={'newidfrom-'+data.id} id={'hello-id-'+ data.id}> {data.name}</li>);
           })
         }
         </ul>
