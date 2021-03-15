@@ -1,0 +1,82 @@
+.styled-select {
+	 position: relative;
+	 overflow: hidden;
+	 background: #f0f0f0;
+	 border: 1px solid #dfdfdf;
+	 border-radius: 4px;
+	 transition: all 100ms ease-out;
+}
+ .styled-select.focus {
+	 border-color: hotpink;
+}
+ .styled-select select, input {
+	 position: relative;
+	 z-index: 2;
+	 /* background: transparent; */
+	 width: 500px;
+	 height: 50px;
+	 margin: 0;
+	 padding: 0 20% 0 1em;
+	 color: #a9a9a9;
+	 font-size: 1em;
+	 line-height: 50px;
+	 border: 0;
+	 border-radius: 4px;
+	 -webkit-appearance: none;
+	 -moz-appearance: none;
+   margin:20px;
+}
+ .styled-select select:focus {
+	 outline: 0;
+}
+ .styled-select .icon {
+	 position: absolute;
+	 top: 50%;
+	 right: 2em;
+	 transform: translate(0, -50%);
+	 z-index: 1;
+	 height: 23px;
+}
+ .styled-select .icon:before, .styled-select .icon:after {
+	 content: '';
+	 position: absolute;
+	 width: 0;
+	 height: 0;
+	 border-style: solid;
+}
+ .styled-select .icon:before {
+	 top: 0;
+	 border-width: 0 9px 9px 9px;
+	 border-color: transparent transparent #bbb transparent;
+}
+ .styled-select .icon:after {
+	 top: 14px;
+	 border-width: 9px 9px 0 9px;
+	 border-color: #bbb transparent transparent transparent;
+}
+/* For Demo Only */
+ .wrapper {
+	 max-width: 650px;
+	 margin: 4em auto 0;
+}
+ [type=text], button {
+	 width: 500px;
+	 transition: all 100ms ease-out;
+	 border: 1px solid #ccc;
+}
+ [type=text]:focus, button:focus {
+	 outline: 0;
+}
+ [type=text] {
+	 margin-bottom: 3em;
+}
+ [type=text]:focus {
+	 border-color: hotpink;
+}
+[type=submit] {
+	 margin-top: 3em;
+	 background: #fff;
+}
+[type=submit]:focus {
+	 background: hotpink;
+}

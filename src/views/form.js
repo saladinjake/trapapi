@@ -1,5 +1,5 @@
 import React,{ Component } from 'react';
-
+import styles from './form.css';
 export default class Form extends Component {
 
   constructor(props){
@@ -55,7 +55,8 @@ export default class Form extends Component {
     const categories = this.props.categories;
     console.log(categories.data)
     return (
-      <div>
+      <div className="wrapper">
+      <div className="styled-select">
         <form onSubmit={this.handleSubmit}>
 
         <label>
@@ -89,6 +90,8 @@ export default class Form extends Component {
         </ul>
         </div>
       </div>
+
+        </div>
     )
   }
 
